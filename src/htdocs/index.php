@@ -14,14 +14,14 @@ if (!isset($TEMPLATE)) {
 }
 ?>
 <div style="width: 100%; background-color:#EEE;border:1px dashed #CCC;padding:5px;">
-	<p>
-		<strong>Status Report</strong>: To date only relatively few datasets
+
+		<font size="2"><strong>Status Report</strong>: To date only relatively few datasets
 		have been incorporated into this application. See the &ldquo;Underlying
 		Datasets&rdquo; section in the introduction for a list, which now
 		includes Haiti. More datasets will be added as time and resources
 		permit. If you have or know of a dataset you would like us to add,
-		please <a href="http://earthquake.usgs.gov/contactus/?to=wwdesignmaps&amp;subject=Worldwide+Design+Maps">email us</a>.
-	</p>
+		please <a href="http://earthquake.usgs.gov/contactus/?to=wwdesignmaps&amp;subject=Worldwide+Design+Maps">email us</a></font>.
+
 </div>
 
 <div id="noscript-application">
