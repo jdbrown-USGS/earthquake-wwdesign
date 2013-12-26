@@ -1,5 +1,5 @@
 @import 'compass/css3';
-
+@import '../../../node_modules/hazdev-tablist/src/tablist/TabList.scss';
 * {
 	@include box-sizing(border-box);
 }
