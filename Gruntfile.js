@@ -103,7 +103,7 @@ module.exports = function (grunt) {
 					components: bowerConfig.directory,
 					middleware: function (connect, options) {
 						return [
-							lrSnippet,
+							// lrSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, options.components),
 							mountPHP(options.base),
