@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This is the schema for the UFC xml feed prduced by the Coldfunion script and consumed by theis application -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://geohazards.usgs.gov/designmaps/ww"
+		xmlns:design="http://geohazards.usgs.gov/designmaps/ww"
+		elementFormDefault="qualified">
+
+	<!-- Top-level element -->
+	<element name="query" type="design:query"/>
+
+	<!-- Definitions of types -->
+	<complexType name="query">
+		<sequence>
+			<element name="metainfo" type="design:metainfo" minOccurs="1"
+				maxOccurs="1"/>
+			<element name="results" type="design:results" minOccurs="1"
+				maxOccurs="1"/>
+		</sequence>
+	</complexType>
+
+	<!-- metainfo -->
+
+	<complexType name="metainfo">
+		<sequence>
+			<element name="dataset" type="design:dataset" minOccurs="1"
+				maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="dataset">
+		<attribute name="id" type="string" use="required">
+			<annotation>
+				<documentation>
+					Will be consistent set of values. Currently one of:
+						ufc
+						ufc_can
+						ufc_us
+						ufc_afg
+						ufc_seas
+						ufc_hat
+						ufc_gshap
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="title" type="string" use="required"/>
+		<attribute name="shorttitle" type="string" use="required"/>
+		<attribute name="desc" type="string" use="required"/>
+		<attribute name="url" type="string" use="required"/>
+	</complexType>
+
+	<!-- results -->
+
+	<complexType name="results">
+		<sequence>
+			<element name="results" tyep="design:result" minOccurs="1"
+				maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="lat" type="decimal" use="required"/>
+		<attribute name="lon" type="decimal" use="required"/>
+	</complexType>
+
+	<complexType name="result">
+		<attribute name="datasetid" type="string">
+			<annotation>
+				<documentation>
+					Will be a consistent set of values. Must be previously defined as a dataset id in the metainfo
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="lat" type="decimal" use="required"/>
+		<attribute name="lon" type="decimal" use="required"/>
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="ss" type="decimal" use="required"/>
+		<attribute name="s1" type="decimal" use="required"/>
+	</compleType>
+</schema>
