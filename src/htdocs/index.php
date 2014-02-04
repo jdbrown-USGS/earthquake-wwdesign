@@ -24,10 +24,13 @@ if (!isset($TEMPLATE)) {
 
 </div>
 
+
+<?php include_once 'inc/controls.inc.php'; ?>
+
 <div id="noscript-application">
 	<noscript>
 		<div>
-			<?php include_once 'inc/controls.inc.php'; ?>
+
 		</div>
 	</noscript>
 </div>
